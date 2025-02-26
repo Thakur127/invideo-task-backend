@@ -38,7 +38,7 @@ defmodule BackendWeb.Endpoint do
   plug Plug.RequestId
   plug Plug.Telemetry, event_prefix: [:phoenix, :endpoint]
 
-  plug CORSPlug
+  plug CORSPlug, origin: ["https://invideo-task-frontend.vercel.app"], methods: ["GET", "POST"]
 
   plug Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json],
